@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Dues</title>
+</head>
+
+<body>
+    <center><h1>STUDENT DUES</h1></center>
+	<hr></hr>
+    <table border="0" cellspacing="10" cellpadding="10" align="center">
+		<tr><th>StudentID</th><th>Name</th><th>Room Fees</th><th>Mess Fees</th><th>Security Money</th><th>Total Dues</th>
+		</tr>
+	{% for student in object_list %}
+		<tr><td align="center">{{student.sid }}</td><td align="center">{{ student.name }}</td><td align="center">{{ student.roomfees }}</td>
+			<td align="center">{{ student.messfees }}</td></td><td align="center">{{ student.securitymoney }}</td>
+			<td align="center">{{ student.totaldue }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+</body>
+</html>

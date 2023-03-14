@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager | Display Accounts</title>
+</head>
+<body>
+    <center><h1>Account Details</h1></center>
+	<hr></hr>
+    <table border="0" cellspacing="10" cellpadding="10" align="center">
+        <tr><th>Employee ID</th><th>Password</th><th>First Name</th><th>Last Name</th><th>Sex</th>
+			<th>Aadhaar No</th><th>Mobile No</th><th>City</th><th>User Type</th>
+		</tr>
+	{% for employee in object_list %}
+		<tr><td align="center">{{employee.empid }}</td><td align="center">{{ employee.password }}</td><td align="center">{{ employee.first_name }}</td><td align="center">{{ employee.last_name }}</td>
+			<td align="center">{{ employee.sex }}</td><td align="center">{{ employee.adhaar }}</td>
+			<td align="center">{{ employee.mobile_no }}</td></td><td align="center">{{ employee.city }}</td>
+			<td align="center">{{ employee.employee_type }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Search</title>
+</head>
+<body>
+    <center>
+        <form method="post" action="/dues/show_student_dues/">
+            {% csrf_token %}
+            Search Student by ID:<input type="text" name="student_id" id="id_q" />
+            <input type="submit" value="Search" />
+        </form>
+    </center>
+</body>
+</html>

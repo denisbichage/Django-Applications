@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Login</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration/style1.css' %}"/>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form method="post" action="/manager/startsession/" class="login-form">
+        {% csrf_token %}
+      <input type="text" name="userid" id="userid" placeholder="Enter username" required="required">
+      <input type="password" name="userpass" id="userpass" placeholder="Enter password" required="required">
+      <button>Login</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Manager Panel</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/style.css' %}" />
+</head>
+<body>
+    <h1>Welcome to S.M.A.R.T. ERP Solutions Pvt. Ltd.</h1>
+
+    <table border="1" align="center">
+    {% for i, j in attr.items %}
+    <tr><th>{{ i }}</th><td> {{ j }}</td></tr>
+    {% endfor %}
+    <a class="i1" style="margin-top: 300px;margin-left: 10px" href="/manager/register">Register Employee</a>
+    <a class="i1" style="margin-left: 20px" href="/manager">View Account Details</a>
+        <a class="i1" style="margin-left: 20px" href="/manager/logout">Logout</a>
+</table>
+</body>
+</html>

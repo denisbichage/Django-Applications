@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Dues</title>
+    <script>
+        function validate(){
+            var r = Document.getElementById("rf");
+            var m = Document.getElementById("mf");
+            if(rf > attr.1 || mf > attr.2){
+                alert('Amount can not be greater than Dues');
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        {% if attr %}
+        <table border="0" align="center" cellspacing="10" cellpadding="10">
+            <tr>
+                <th>Student ID</th><th>Room Fees</th><th>Mess Fees</th><th>Total Dues</th>
+            </tr>
+            <tr>
+                {% for i in attr %}
+                <td align="center"> {{ i }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+        <form action="/dues/update_dues/" method="post" onsubmit="validate()">
+            {% csrf_token %}
+            <input type="text" readonly="readonly" name="student_id" value= {{ attr.0 }} >
+            <input type="text" required="required" placeholder="Enter room fees" value="" name="room_fees" id="rf">
+            <input type="text"  placeholder="Enter Mess fees" value="" name="mess_fees" id="mf">
+            <input type="submit" value="Submit">
+        </form>
+        {% else %}
+        <h3>Student Id not found</h3>
+        {% endif %}
+    </center>
+</body>
+</html>

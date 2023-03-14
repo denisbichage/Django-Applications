@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ERP | Login</title>
+    {% load static %}
+<link id="ST" rel="stylesheet" type="text/css" href="{% static 'registration/style.css' %}"/>
+<link id="ST1" rel="stylesheet" type="text/css" href="{% static 'registration/style1.css' %}" disabled="true"/>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+<form action="" method="post" class="register-form">
+<input class="i1" type="text" name="name1" id="name" required="required" placeholder="Enter first name">
+<input class="i2" type="text" id="name2" required="required" placeholder="Enter last name"><br>
+<div style="width:644px;vertical-align: center;text-align: left;padding: 15px;margin-left: 40px"><input type="radio" name="sex" value="male" checked="checked">Male<input type="radio" name="sex" value="Female" style="margin-left: 300px">Female</div><br>
+<input class="i1" type="number" required="required" placeholder="Enter Aadhaar number" max="999999999999">
+<input class="i3" type="text" value="+91" readonly="readonly">
+<input class="i5" type="number" name="mobile" id="mobile" required="required" placeholder="Enter your mobile no." min="7000000000" max="9999999999"><br>
+<input class="i1" type="text" id="parent" required="required" placeholder="Enter father's/mother's name">
+<input class="i2" type="number" id="parentmobile" required="required" placeholder="Enter father's/mother's mobile no." min="7000000000" max="9999999999"><br>
+<input class="i1" type="text" required="required" placeholder="Address line 1">
+<input class="i2" type="text" required="required" placeholder="Address line 2"><br>
+<input class="i1" type="text" required="required" placeholder="Enter city">
+<input class="i2" type="number" id="pincode" required="required" placeholder="Enter your pincode" max="999999"><br>
+<input class="i1" type="text" id="guardian" placeholder="Enter guardian's name">
+<input class="i2" type="number" id="guardianmobile" required="required" placeholder="Enter guardian's mobile no." min="7000000000" max="9999999999"><br>
+<input class="i4" type="text" id="institute" required="required" placeholder="Enter institute's name"><br>
+<input class="i1" type="text" id="nameofHOD" required="required" placeholder="Enter name of HOD">
+<input class="i2" type="number" id="HODmobile" required="required" placeholder="Enter mobile no. of HOD" min="7000000000" max="9999999999"><br>
+<button type="submit">Submit</button>
+<p class="message">Already registered? <a class="a1" href="#">Sign In</a></p>
+</form>
+<form method="post" action="/GoServicing/Login" class="login-form">
+      <input type="text" name="userid" id="userid" placeholder="Enter username" required="required">
+      <input type="password" name="userpass" id="userpass" placeholder="Enter password" required="required">
+      <button>Login</button>
+      <p class="message">Not registered? <a class="a2" href="#">Create an account</a></p>
+</form>
+</div>
+</div>
+<script src="{% static 'registration/abc.js' %}"></script>
+<script src="{% static 'registration/jquery.min.js' %}"></script>
+<script>$('.a2').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+   document.getElementById("ST1").disabled=false;
+   document.getElementById("ST").disabled=true;
+});
+$('.a1').click(function(){
+	   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+	   document.getElementById("ST1").disabled=true;
+	   document.getElementById("ST").disabled=false;
+	});
+ </script> 
+</body>
+</html>

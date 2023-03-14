@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP | Student info</title>
+</head>
+<body>
+<center><h1>Student Info</h1></center>
+<hr>
+<table cellpadding="3" border="1">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>Registration Date</th>
+        <th>Adhaar Number</th>
+        <th>Mobile</th>
+        <th>Parent Name</th>
+        <th>Parent Mobile</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Pincode</th>
+        <th>Guardian Name</th>
+        <th>Guardian Mobile</th>
+        <th>Institution Name</th>
+        <th>HOD Name</th>
+        <th>HOD Mobile</th>
+    </tr>
+    {% for c in context %}
+        <tr>
+            <td>{{ c.sid }}</td>
+            <td>{{ c.first_name }} {{ c.last_name }}</td>
+            <td>{{ c.sex }}</td>
+            <td>{{ c.registration_date }}</td>
+            <td>{{ c.adhaar }}</td>
+            <td>{{ c.mobile_no }}</td>
+            <td>{{ c.parent_name }}</td>
+            <td>{{ c.parent_mobile }}</td>
+            <td>{{ c.address_l1 }}, {{ c.address_l2 }}</td>
+            <td>{{ c.city }}</td>
+            <td>{{ c.pin_code }}</td>
+            <td>{{ c.guardian_name }}</td>
+            <td>{{ c.guardian_mobile }}</td>
+            <td>{{ c.institution_name }}</td>
+            <td>{{ c.hod_name }}</td>
+            <td>{{ c.hod_mobile }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
